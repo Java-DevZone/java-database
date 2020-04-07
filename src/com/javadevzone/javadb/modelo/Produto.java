@@ -1,6 +1,6 @@
 package com.javadevzone.javadb.modelo;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class Produto {
 
@@ -9,7 +9,7 @@ public class Produto {
 	private double preco;
 	private String descricao;
 	private int quantidade;
-	private Date dataCadastro;
+	private LocalDateTime dataCadastro;
 	
 	
 	public int getId() {
@@ -42,10 +42,10 @@ public class Produto {
 	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
 	}
-	public Date getDataCadastro() {
+	public LocalDateTime getDataCadastro() {
 		return dataCadastro;
 	}
-	public void setDataCadastro(Date dataCadastro) {
+	public void setDataCadastro(LocalDateTime dataCadastro) {
 		this.dataCadastro = dataCadastro;
 	}
 	

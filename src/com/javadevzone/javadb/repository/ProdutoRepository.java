@@ -1,8 +1,9 @@
 package com.javadevzone.javadb.repository;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 import com.javadevzone.javadb.modelo.Produto;
 
@@ -26,8 +27,8 @@ public class ProdutoRepository {
 			statement.setString(3, produto.getDescricao());
 			statement.setInt(4, produto.getQuantidade());
 			
-			Date dataCadastro = new Date(produto.getDataCadastro().getTime());
-			statement.setDate(5, dataCadastro);
+			LocalDateTime dataCadastro = produto.getDataCadastro();
+			statement.setTimestamp(5, Timestamp.valueOf(dataCadastro));
 			
 			statement.execute();
 		} catch (Exception e) {
